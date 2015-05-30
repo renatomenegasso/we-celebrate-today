@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe HolidayController do
-  # render_views
+  render_views
   fixtures :holiday
 
   describe 'GET #show' do
