@@ -6,9 +6,7 @@ class HolidayController < ApplicationController
   private
 
   def by_param_type
-    if params.key? :today
-      Holiday.from_today
-    elsif params.key? :slug
+    if params.key? :slug
       Holiday.where(slug: params[:slug])
     elsif params.key? :id
       Holiday.where(id: params[:id])
