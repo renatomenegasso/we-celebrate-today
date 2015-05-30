@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :holiday, path: 'feriado', only: [:show]
-  root to: 'holiday#show'
+  root to: 'holiday#show', defaults: { today: true }
 
+  resources :holiday, path: 'feriado', only: [:show]
   get '/:slug', to: 'holiday#show'
 end
