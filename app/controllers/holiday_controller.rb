@@ -1,6 +1,7 @@
 class HolidayController < ApplicationController
   def show
     @holiday = by_param_type
+    head :not_found if @holiday.nil?
   end
 
   private
