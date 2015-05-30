@@ -1,15 +1,19 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the HolidayHelper. For example:
-#
-# describe HolidayHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
-RSpec.describe HolidayHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe HolidayHelper do
+  describe '#build_date' do
+    let(:holiday) { Holiday.new(day: 1, month: 1) }
+
+    it 'build holiday date with current year' do
+      expect(helper.build_date(holiday).year).to eq(Date.today.year)
+    end
+
+    it 'build holiday date with holiday month' do
+      expect(helper.build_date(holiday).month).to eq(holiday.month)
+    end
+
+    it 'build holiday date with holiday day' do
+      expect(helper.build_date(holiday).day).to eq(holiday.day)
+    end
+  end
 end

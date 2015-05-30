@@ -1,6 +1,6 @@
 <% content_for(:title) do %><%= @holiday %><% end %>
 
-<h1><%= "#{@holiday.day}/#{@holiday.month}" %></h1>
+<h1><%= l(build_date(@holiday), format: :short) %></h1>
 <h3><%= @holiday.description %></h3>
 
 <hr class="intro-divider">
