@@ -1,5 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe Holiday, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Holiday do
+  describe '#to_s' do
+    subject do
+      Holiday.new(day: 7, month: 9, description: 'Independencia do Brasil')
+    end
+
+    it 'render into proper format' do
+      expected = "#{subject.day}/#{subject.month} #{subject.description}"
+      expect(subject.to_s).to eq(expected)
+    end
+  end
 end

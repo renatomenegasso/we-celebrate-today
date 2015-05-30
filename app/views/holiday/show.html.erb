@@ -1,4 +1,4 @@
-<% content_for(:title) do %><%= @holiday.description %><% end %>
+<% content_for(:title) do %><%= @holiday %><% end %>
 
 <h1><%= "#{@holiday.day}/#{@holiday.month}" %></h1>
 <h3><%= @holiday.description %></h3>
@@ -13,7 +13,7 @@
     </a>
   </li>
   <li>
-    <a href="http://twitter.com/share?text=<%= @holiday.description %> - &amp;url=<%= request.original_url %>"
+    <a href="http://twitter.com/share?text=<%= @holiday %> - &amp;url=<%= request.original_url %>"
       class="btn btn-default btn-lg"
       target="_blank">
       <i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span>
