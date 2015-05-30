@@ -12,20 +12,20 @@ describe HolidayController do
 
     it 'assigns @holiday to view' do
       get :show, id: Holiday.first.id
-      expect(assigns(:holiday)).to eq Holiday.first
+      expect(assigns(:holidays)).to eq [Holiday.first]
     end
 
     context 'with slug given' do
-      let(:slug) { Holiday.first.slug }
+      let(:holiday) { Holiday.first }
 
       it 'return a success response' do
-        get :show, slug: slug
+        get :show, slug: holiday.slug
         expect(response).to be_success
       end
 
       it 'assigns @holiday to view' do
-        get :show, slug: slug
-        expect(assigns(:holiday)).to eq Holiday.first
+        get :show, slug: holiday.slug
+        expect(assigns(:holidays)).to eq [holiday]
       end
     end
 
@@ -43,7 +43,7 @@ describe HolidayController do
 
       it 'assigns @holiday to view' do
         get :show, today: true
-        expect(assigns(:holiday)).to eq holiday
+        expect(assigns(:holidays)).to eq [holiday]
       end
     end
   end

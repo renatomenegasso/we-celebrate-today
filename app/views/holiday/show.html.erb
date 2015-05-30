@@ -1,7 +1,10 @@
 <% content_for(:title) do %><%= @holiday %><% end %>
 
-<h1><%= l(build_date(@holiday), format: :short) %></h1>
-<h3><%= @holiday.description %></h3>
+<h1><%= l(build_date(@holidays.first), format: :short) %></h1>
+
+<% @holidays.each do |h| %>
+  <h3><%= h.description %></h3>
+<% end %>
 
 <hr class="intro-divider">
 <ul class="list-inline intro-social-buttons">
@@ -13,7 +16,7 @@
     </a>
   </li>
   <li>
-    <a href="http://twitter.com/share?text=<%= @holiday %> - &amp;url=<%= request.original_url %>"
+    <a href="http://twitter.com/share?text=<%= @holidays.first %> - &amp;url=<%= request.original_url %>"
       class="btn btn-default btn-lg"
       target="_blank">
       <i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span>

@@ -1,17 +1,17 @@
 class HolidayController < ApplicationController
   def show
-    @holiday = by_param_type
+    @holidays = by_param_type
   end
 
   private
 
   def by_param_type
     if params.key? :today
-      Holiday.from_today.first
+      Holiday.from_today
     elsif params.key? :slug
-      Holiday.find_by(slug: params[:slug])
+      Holiday.where(slug: params[:slug])
     elsif params.key? :id
-      Holiday.find_by(params[:id])
+      Holiday.where(id: params[:id])
     end
   end
 end
