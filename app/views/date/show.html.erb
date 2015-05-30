@@ -1,9 +1,16 @@
 <% content_for(:title) do %><%= l(@date) %><% end %>
 
-<h1><%= l(build_date(@date), format: :short) %></h1>
+<h1><%= l(@date, format: :short) %></h1>
 
-<% @holidays.each do |h| %>
-  <h3><%= h.description %></h3>
+<% if @holidays.empty? %>
+  <h3>Ops, não temos nada a comemorar no dia <%= l(@date, format: :short) %>.</h3>
+  <p>
+    <a href="mailto:celebramoshoje@gmail.com.br?subject=O site está errado!">Clique aqui</a> se estiver errado.
+  </p>
+<% else %>
+  <% @holidays.each do |h| %>
+    <h3><%= h.description %></h3>
+  <% end %>
 <% end %>
 
 <hr class="intro-divider">
