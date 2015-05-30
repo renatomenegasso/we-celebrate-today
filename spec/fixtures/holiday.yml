@@ -1,0 +1,6 @@
+christmas:
+  id: 1
+  description: 'Natal'
+  slug: 'natal'
+  day: 25
+  month: 12
