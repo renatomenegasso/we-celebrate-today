@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: dbsq45qdnb1ne7
+  username: ekcadcrmlossok
+  password: <%= ENV['WE_CELEBRATE_TODAY_DATABASE_PASSWORD'] %>
