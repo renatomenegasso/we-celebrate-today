@@ -1,4 +1,4 @@
-[![Circle CI](https://circleci.com/gh/renatomenegasso/we-celebrate-today.svg?style=svg)](https://circleci.com/gh/renatomenegasso/we-celebrate-today) [![Code Climate](https://codeclimate.com/github/renatomenegasso/we-celebrate-today/badges/gpa.svg)](https://codeclimate.com/github/renatomenegasso/we-celebrate-today)
+[![Build Status](https://travis-ci.org/renatomenegasso/we-celebrate-today.svg?branch=master)](https://travis-ci.org/renatomenegasso/we-celebrate-today) [![Code Climate](https://codeclimate.com/github/renatomenegasso/we-celebrate-today/badges/gpa.svg)](https://codeclimate.com/github/renatomenegasso/we-celebrate-today)
 ### COMEMORAMOS HOJE ###
 
 * * *
