@@ -11,4 +11,26 @@ describe Holiday do
       expect(subject.to_s).to eq(expected)
     end
   end
+
+  describe '#save' do
+    subject do
+      Holiday.create(day: 7, month: 9, description: 'Dia da música')
+    end
+
+    it 'fills slug field properly' do
+      expect(subject.slug).to eq 'dia-da-musica'
+    end
+
+    context 'with existen slug' do
+      let(:original_slug) { 'another-slug' }
+
+      subject do
+        Holiday.create(day: 7, month: 9, description: 'Dia da madeira', slug: original_slug)
+      end
+
+      it 'not change original slug' do
+        expect(subject.slug).to eq original_slug
+      end
+    end
+  end
 end
