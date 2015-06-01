@@ -8,11 +8,11 @@ class DateController < ApplicationController
 
   def date
     @date ||=  if params.key? :today
-      Date.today
+      Time.zone.today
     elsif params.key? :tomorrow
-      Date.tomorrow
+      Time.zone.tomorrow
     elsif params.key? :yesterday
-      Date.yesterday
+      Time.zone.yesterday
     else
       Date.parse("#{params[:day]} #{params[:month]}", format: :short)
     end
